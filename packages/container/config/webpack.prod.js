@@ -16,6 +16,7 @@ const prodConfig = {
         new ModuleFederationPlugin({
             name: 'container',
             remotes: {
+                // had to remove the '/' as cloudfront or s3 seems to add the slash
                 marketing: `marketing@${domain}marketing/latest/remoteEntry.js`
             },
             shared: packageJson.dependencies
