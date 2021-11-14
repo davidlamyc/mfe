@@ -6,7 +6,9 @@ const commonConfig = require('./webpack.common');
 const prodConfig = {
     mode: 'production',
     output: {
-        filename: '[name].[contenthash].js'
+        filename: '[name].[contenthash].js',
+        // will take all file names and prepend to routes
+        publicPath: '/container/latest/',
     },
     plugins: [
         new ModuleFederationPlugin({
